@@ -7,9 +7,9 @@
 
 # FRONTEND #
 
-# HOT TAKES #
+## HOT TAKES ##
 
-## Installation ##
+### Installation ###
 
 Here are the dependancies you need to install:
 - NodeJS 12.14 or 14.0.
@@ -21,7 +21,7 @@ On Windows, these installations require to use PowerShell in administrator mode.
 Then, clone this repo, `run npm install`, and `run npm install --save-dev run-script-os`.
 
 
-## Usage ##
+### Usage ###
 
 Run `npm start`. This should both run the local server and launch your browser.
 
