@@ -82,7 +82,7 @@ exports.likeSauce = (req, res, next) => {
         // Si l'utilisateur aime le produit :
         case 1:
             Sauce.updateOne({ _id: sauceId }, { $push: { usersLiked: userId }, $inc: { likes: +1 } })
-                .then(() => res.status(200).json({ message: 'evaluation complétée. like' }))
+                .then(() => res.status(200).json({ message: 'evaluation complétée: like' }))
                 .catch((error) => res.status(400).json({ error }))
             break;
         // Si l'utilisateur a enlever son like ou dislike :
@@ -91,12 +91,12 @@ exports.likeSauce = (req, res, next) => {
                 .then((sauce) => {
                     if (sauce.usersLiked.includes(userId)) {
                         Sauce.updateOne({ _id: sauceId }, { $pull: { usersLiked: userId }, $inc: { likes: -1 } })
-                            .then(() => res.status(200).json({ message: 'evaluation complétée. neutral' }))
+                            .then(() => res.status(200).json({ message: 'evaluation complétée: neutral' }))
                             .catch((error) => res.status(400).json({ error }))
                     }
                     if (sauce.usersDisliked.includes(userId)) {
                         Sauce.updateOne({ _id: sauceId }, { $pull: { usersDisliked: userId }, $inc: { dislikes: -1 } })
-                            .then(() => res.status(200).json({ message: 'evaluation complétée. neutral' }))
+                            .then(() => res.status(200).json({ message: 'evaluation complétée: neutral' }))
                             .catch((error) => res.status(400).json({ error }))
                     }
                 })
@@ -105,7 +105,7 @@ exports.likeSauce = (req, res, next) => {
         // Si l'utilisateur n'aime pas le produit :
         case -1:
             Sauce.updateOne({ _id: sauceId }, { $push: { usersDisliked: userId }, $inc: { dislikes: +1 } })
-                .then(() => { res.status(200).json({ message: 'evaluation complétée. dislike' }) })
+                .then(() => { res.status(200).json({ message: 'evaluation complétée: dislike' }) })
                 .catch((error) => res.status(400).json({ error }))
             break;
 

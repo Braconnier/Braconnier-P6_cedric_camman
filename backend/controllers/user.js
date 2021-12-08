@@ -8,7 +8,7 @@ const privateKey = process.env.PRIVATE_TOKEN_STRING;
 
 // export de la fonction d'inscription
 exports.signup = (req, res, next) => {
-    // cryptage 10 'tours' du mot de passe
+    // cryptage 10 'salts' du mot de passe
     bcrypt.hash(req.body.password, 10)
         .then(hash => {
             const user = new User({
