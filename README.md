@@ -4,7 +4,7 @@
 
 ## Server side code ##
 
-Ouvrir un terminal dans le repertoire backend et installer les dependences avec `npm install`, puis lancer le serveur avec `npm run start`.
+Ouvrir un terminal dans le repertoire backend et installer les dependences avec `npm install`, puis lancer le serveur avec `npm start`.
 
 Le serveur devrait demarrer sur le port 3000 par défaut.
 
