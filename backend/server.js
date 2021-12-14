@@ -1,4 +1,4 @@
-// Necessaire pour la création d'un serveur HTTPS
+// Necessaire pour la création d'un serveur HTTP
 const http = require('http');
 
 // Necessaire pour l'app principale
